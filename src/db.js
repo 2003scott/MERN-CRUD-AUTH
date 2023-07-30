@@ -5,7 +5,7 @@ import mongoose from "mongoose";
 export const connectDB = async () => {
     try{
         await mongoose.connect('mongodb://0.0.0.0:27017/merndb')
-        console.log(">>> DB is connected")
+        console.log(">>> Conectado a la Base de Datos")
     }catch(error){
         console.log(error)
     }
