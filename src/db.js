@@ -1,12 +1,11 @@
 import mongoose from "mongoose";
-
-// mongoose.connect("mongodb://localhost/merndb")
+import { MONGODB_URI } from "./config.js";
 
 export const connectDB = async () => {
-    try{
-        await mongoose.connect('mongodb://0.0.0.0:27017/merndb')
-        console.log(">>> Conectado a la Base de Datos")
-    }catch(error){
-        console.log(error)
-    }
-}
+  try {
+    await mongoose.connect(MONGODB_URI);
+    console.log("MongoDB is connected");
+  } catch (error) {
+    console.error(error);
+  }
+};
